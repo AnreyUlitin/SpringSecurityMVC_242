@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User page</title>
+</head>
+<body>
+<div>
+    <h3><p th:text="'User page : ' + ${user.firstname} + ' ' + ${user.lastname}"></p></h3>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Age</th>
+            <th>E-mail</th>
+            <th>Role</th>
+        </tr>
+        <tr>
+            <td th:text="${user.id}">ID</td>
+            <td th:text="${user.username}">USERNAME</td>
+            <td th:text="${user.password}">PASSWORD</td>
+            <td th:text="${user.firstname}">FirstNAME</td>
+            <td th:text="${user.lastname}">LastNAME</td>
+            <td th:text="${user.age}">AGE</td>
+            <td th:text="${user.email}">E-MAIL</td>
+            <td th:text="${user.roles}"></td>
+        </tr>
+    </table>
+    <br/>
+    <br/>
+    <hr/>
+</div>
+</body>
+<br><br>
+</form>
+<input type="submit" value="logout"/>
+</html>
+<style>
+
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: left;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+</style>
