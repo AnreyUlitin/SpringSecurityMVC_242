@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User page</title>
+</head>
+<body>
+<div>
+    <h3><p th:text="'Admin page : ' + ${user.firstname} + ' ' + ${user.lastname}"></p></h3>
+
+    <form th:method="POST" th:action="@{/admin/create}" th:object="${user}">
+        <table>
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" th:field="*{username}"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="text" th:field="*{password}"></td>
+            </tr>
+            <tr>
+                <td>FirstName:</td>
+                <td><input type="text" th:field="*{firstname}"/></td>
+            </tr>
+            <tr>
+                <td>LastName:</td>
+                <td><input type="text" th:field="*{lastname}"/></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="text" th:field="*{age}"/></td>
+            </tr>
+
+            <tr>
+                <td>E-mail:</td>
+                <td><input type="text" th:field="*{email}"/></td>
+            </tr>
+
+            <input type="checkbox" name="checkBoxRoles" value="ROLE_USER"/>USER
+            <input type="checkbox" name="checkBoxRoles" value="ROLE_ADMIN"/>ADMIN
+            <br/>
+        </table>
+        <br/>
+        <input type="submit" value="create"/>
+<br/>
+<br><br>
+    </form>
+    <input type="submit" value="logout"/>
+
+    <br/>
+    <br/>
+</div>
+</body>
+</html>
+
+    <style>
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: left;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+
+</html>
